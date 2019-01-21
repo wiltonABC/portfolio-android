@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedbackFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Leave your feedback"
+            android:textSize="20sp"
+            android:textColor="#FFF"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorPrimary"
+            android:id="@+id/titleText"/>
+
+        <RelativeLayout
+            android:id="@+id/feedbackFormLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/titleText">
+
+            <EditText
+                android:id="@+id/feedbackAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Author"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="30dp"
+                android:inputType="text"
+                />
+
+            <EditText
+                android:id="@+id/feedbackCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Company"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="30dp"
+                android:inputType="text"
+                android:layout_below="@id/feedbackAuthor"
+                />
+
+            <EditText
+                android:id="@+id/feedbackMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Feedback"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="30dp"
+                android:inputType="textMultiLine"
+                android:layout_below="@id/feedbackCompany"
+
+                />
+
+            <Button
+                android:id="@+id/feedbackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:text="Send Feedback"
+                android:padding="10dp"
+                android:textColor="#FFF"
+                android:background="@drawable/purple_button"
+                android:layout_below="@id/feedbackMessage"
+                android:layout_centerInParent="true"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/feedbackListLayout"
+            >
+
+            <ImageView
+                android:id="@+id/imageButtonShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/show_feedbacks"
+                android:layout_centerVertical="true"
+                />
+
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="br.com.wiltoncosta.portfolio_mobile.FeedbacksListFragment"
+                android:id="@+id/feedbacksListFragment"
+                android:layout_toRightOf="@id/imageButtonShow"
+                >
+            </fragment>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

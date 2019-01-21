@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Portfolio</string>
+    <string name="backend_url">http://portfolio-wilton.us-east-2.elasticbeanstalk.com/webapi</string>
+    <string name="backend_root_url">http://portfolio-wilton.us-east-2.elasticbeanstalk.com</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_about">This app was made as part of my personal portfolio solution.
+The purpose is to provide potential employers another way to see my professional profile and show off some of my mobile software development skills.
+\n\n
+As the web frontend and web backend, this software source code is available on my github.
+\n\n
+The main goal of the entire portfolio solution is to portray a bit of my work experience through a software solution entirely designed by me, since I have always worked with proprietary software, of which I can not give much detail.</string>
+</resources>
