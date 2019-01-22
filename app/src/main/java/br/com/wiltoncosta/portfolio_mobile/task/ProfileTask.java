@@ -54,16 +54,17 @@ public class ProfileTask extends AsyncTask<Void, Void, Profile> {
 
     @Override
     protected void onPostExecute(Profile profile) {
-        if (this.context.get() != null) {
+        Context context = this.context.get();
+        if (context != null) {
 
-            final PortfolioActivity portfolioActivity = (PortfolioActivity) this.context.get();
+            final PortfolioActivity portfolioActivity = (PortfolioActivity) context;
 
             //Could not get profile. Abort activity
             if (profile == null) {
-                AlertDialog alert = new AlertDialog.Builder(this.context.get())
-                        .setTitle("Application Error")
-                        .setMessage("Error getting profile data! Please, check your internet connection!")
-                        .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                AlertDialog alert = new AlertDialog.Builder(context)
+                        .setTitle(context.getString(R.string.errorDialogTitle))
+                        .setMessage(context.getString(R.string.errorGettingData, context.getString(R.string.profile)))
+                        .setNeutralButton(context.getString(R.string.ok), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 portfolioActivity.finish();
@@ -86,8 +87,8 @@ public class ProfileTask extends AsyncTask<Void, Void, Profile> {
 
             //Download profile image from Url and update the ImageView
             Glide
-                .with(this.context.get())
-                .load(this.context.get().getString(R.string.backend_root_url) + profile.getImage())
+                .with(context)
+                .load(context.getString(R.string.backend_root_url) + profile.getImage())
                 .into(helper.getImage());
 
             //Store returned profile in the Portfolio Activity for further use

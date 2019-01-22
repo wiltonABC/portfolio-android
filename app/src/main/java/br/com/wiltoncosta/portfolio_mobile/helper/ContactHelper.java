@@ -27,13 +27,17 @@ public class ContactHelper {
 
     public ContactHelper(final Context context, View view) {
         this.name = view.findViewById(R.id.contactName);
-        final RequiredValidator nameValidator = new RequiredValidator(name, "Please fill in the name!");
+        final RequiredValidator nameValidator = new RequiredValidator(name,
+                context.getString(R.string.fillIn,context.getString(R.string.name)));
         this.email = view.findViewById(R.id.contactEmail);
-        final RequiredValidator emailValidator = new RequiredValidator(email, "Please fill in the email!");
+        final RequiredValidator emailValidator = new RequiredValidator(email,
+                context.getString(R.string.fillIn,context.getString(R.string.email)));
         this.subject = view.findViewById(R.id.contactSubject);
-        final RequiredValidator subjectValidator = new RequiredValidator(subject, "Please fill in the subject!");
+        final RequiredValidator subjectValidator = new RequiredValidator(subject,
+                context.getString(R.string.fillIn,context.getString(R.string.subject)));
         this.message = view.findViewById(R.id.contactMessage);
-        final RequiredValidator messageValidator = new RequiredValidator(message, "Please fill in the message!");
+        final RequiredValidator messageValidator = new RequiredValidator(message,
+                context.getString(R.string.fillIn,context.getString(R.string.message)));
 
         this.button = view.findViewById(R.id.contactButton);
 

@@ -11,6 +11,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import br.com.wiltoncosta.portfolio_mobile.PortfolioActivity;
+import br.com.wiltoncosta.portfolio_mobile.R;
 import br.com.wiltoncosta.portfolio_mobile.helper.PortfolioHelper;
 import br.com.wiltoncosta.portfolio_mobile.SkillsFragment;
 import br.com.wiltoncosta.portfolio_mobile.datahandler.SkillsDataHandler;
@@ -53,16 +54,17 @@ public class SkillsTask extends AsyncTask<Void, Void, List<Skill>> {
 
     @Override
     protected void onPostExecute(List<Skill> skills) {
-        if (this.context.get() != null) {
-            final PortfolioActivity portfolioActivity = (PortfolioActivity) context.get();
+        Context context = this.context.get();
+        if (context != null) {
+            final PortfolioActivity portfolioActivity = (PortfolioActivity) context;
 
 
             //Could not get skills. Abort activity
             if (skills == null) {
-                AlertDialog alert = new AlertDialog.Builder(this.context.get())
-                        .setTitle("Application Error")
-                        .setMessage("Error getting skills data! Please, check your internet connection!")
-                        .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                AlertDialog alert = new AlertDialog.Builder(context)
+                        .setTitle(context.getString(R.string.errorDialogTitle))
+                        .setMessage(context.getString(R.string.errorGettingData, context.getString(R.string.skills)))
+                        .setNeutralButton(context.getString(R.string.ok), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 portfolioActivity.finish();

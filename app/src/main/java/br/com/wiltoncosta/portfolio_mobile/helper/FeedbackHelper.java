@@ -31,11 +31,14 @@ public class FeedbackHelper {
 
     public FeedbackHelper(final Context context, View view) {
         this.author = view.findViewById(R.id.feedbackAuthor);
-        final RequiredValidator authorValidator = new RequiredValidator(author, "Please fill in the author!");
+        final RequiredValidator authorValidator = new RequiredValidator(author,
+                context.getString(R.string.fillIn,context.getString(R.string.author)));
         this.company = view.findViewById(R.id.feedbackCompany);
-        final RequiredValidator companyValidator = new RequiredValidator(company, "Please fill in the company!");
+        final RequiredValidator companyValidator = new RequiredValidator(company,
+                context.getString(R.string.fillIn,context.getString(R.string.company)));
         this.message = view.findViewById(R.id.feedbackMessage);
-        final RequiredValidator messageValidator = new RequiredValidator(message, "Please fill in the feedback!");
+        final RequiredValidator messageValidator = new RequiredValidator(message,
+                context.getString(R.string.fillIn,context.getString(R.string.feedback)));
 
         this.button = view.findViewById(R.id.feedbackButton);
 
