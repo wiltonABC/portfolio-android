@@ -1,8 +1,6 @@
-package br.com.wiltoncosta.portfolio_mobile;
+package br.com.wiltoncosta.portfolio_mobile.helper;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +8,8 @@ import android.widget.EditText;
 
 import java.util.Date;
 
+import br.com.wiltoncosta.portfolio_mobile.PortfolioActivity;
+import br.com.wiltoncosta.portfolio_mobile.R;
 import br.com.wiltoncosta.portfolio_mobile.model.Message;
 import br.com.wiltoncosta.portfolio_mobile.task.MessageTask;
 import br.com.wiltoncosta.portfolio_mobile.validator.RequiredValidator;

@@ -1,6 +1,5 @@
-package br.com.wiltoncosta.portfolio_mobile;
+package br.com.wiltoncosta.portfolio_mobile.helper;
 
-import android.graphics.Bitmap;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,6 +8,8 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import br.com.wiltoncosta.portfolio_mobile.PortfolioActivity;
+import br.com.wiltoncosta.portfolio_mobile.R;
 import br.com.wiltoncosta.portfolio_mobile.model.Profile;
 
 public class PortfolioHelper {

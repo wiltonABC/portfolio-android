@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.View;
 
 import java.io.IOException;
@@ -12,7 +11,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import br.com.wiltoncosta.portfolio_mobile.PortfolioActivity;
-import br.com.wiltoncosta.portfolio_mobile.PortfolioHelper;
+import br.com.wiltoncosta.portfolio_mobile.helper.PortfolioHelper;
 import br.com.wiltoncosta.portfolio_mobile.SkillsFragment;
 import br.com.wiltoncosta.portfolio_mobile.datahandler.SkillsDataHandler;
 import br.com.wiltoncosta.portfolio_mobile.model.Skill;
@@ -58,7 +57,7 @@ public class SkillsTask extends AsyncTask<Void, Void, List<Skill>> {
             final PortfolioActivity portfolioActivity = (PortfolioActivity) context.get();
 
 
-            //Could not get profile. Abort application
+            //Could not get skills. Abort activity
             if (skills == null) {
                 AlertDialog alert = new AlertDialog.Builder(this.context.get())
                         .setTitle("Application Error")

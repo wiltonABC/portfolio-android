@@ -11,9 +11,8 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import br.com.wiltoncosta.portfolio_mobile.PortfolioActivity;
-import br.com.wiltoncosta.portfolio_mobile.PortfolioHelper;
+import br.com.wiltoncosta.portfolio_mobile.helper.PortfolioHelper;
 import br.com.wiltoncosta.portfolio_mobile.WorkFragment;
-import br.com.wiltoncosta.portfolio_mobile.WorkHelper;
 import br.com.wiltoncosta.portfolio_mobile.model.WorkDone;
 import br.com.wiltoncosta.portfolio_mobile.web.WorkWebClient;
 
@@ -54,7 +53,7 @@ public class WorkTask extends AsyncTask<Void, Void, List<WorkDone>> {
         if (context.get() != null) {
             final PortfolioActivity portfolioActivity = (PortfolioActivity) context.get();
 
-            //Could not get profile. Abort application
+            //Could not get work list. Abort activity
             if (workDoneList == null) {
                 AlertDialog alert = new AlertDialog.Builder(this.context.get())
                         .setTitle("Application Error")
@@ -71,7 +70,7 @@ public class WorkTask extends AsyncTask<Void, Void, List<WorkDone>> {
 
             }
 
-            //Update Skills Fragment
+            //Update Work Fragment
             WorkFragment workFragment = (WorkFragment) portfolioActivity.getSupportFragmentManager().findFragmentByTag("workFragment");
             workFragment.getHelper().updateWorkDone(workDoneList);
 

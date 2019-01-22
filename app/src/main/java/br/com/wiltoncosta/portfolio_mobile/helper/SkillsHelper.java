@@ -1,4 +1,4 @@
-package br.com.wiltoncosta.portfolio_mobile;
+package br.com.wiltoncosta.portfolio_mobile.helper;
 
 import android.content.Context;
 import android.view.View;
@@ -7,8 +7,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.wiltoncosta.portfolio_mobile.R;
 import br.com.wiltoncosta.portfolio_mobile.adapter.SkillAdapter;
-import br.com.wiltoncosta.portfolio_mobile.model.Skill;
 
 public class SkillsHelper {
 

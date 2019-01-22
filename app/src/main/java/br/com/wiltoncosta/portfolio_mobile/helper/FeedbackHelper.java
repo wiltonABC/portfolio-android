@@ -1,4 +1,4 @@
-package br.com.wiltoncosta.portfolio_mobile;
+package br.com.wiltoncosta.portfolio_mobile.helper;
 
 import android.content.Context;
 import android.view.View;
@@ -10,6 +10,8 @@ import android.widget.RelativeLayout;
 
 import java.util.Date;
 
+import br.com.wiltoncosta.portfolio_mobile.PortfolioActivity;
+import br.com.wiltoncosta.portfolio_mobile.R;
 import br.com.wiltoncosta.portfolio_mobile.model.Feedback;
 import br.com.wiltoncosta.portfolio_mobile.task.FeedbackListTask;
 import br.com.wiltoncosta.portfolio_mobile.task.FeedbackTask;

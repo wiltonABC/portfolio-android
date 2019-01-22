@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import br.com.wiltoncosta.portfolio_mobile.helper.SkillsHelper;
 import br.com.wiltoncosta.portfolio_mobile.task.SkillsTask;
 
 

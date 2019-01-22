@@ -17,7 +17,7 @@ import br.com.wiltoncosta.portfolio_mobile.R;
 import br.com.wiltoncosta.portfolio_mobile.jsonadapter.DateLongFormatTypeAdapter;
 import br.com.wiltoncosta.portfolio_mobile.model.WorkDone;
 
-public class WorkWebClient {
+public class WorkWebClient extends WebClient {
 
     private Context context;
 
@@ -29,27 +29,7 @@ public class WorkWebClient {
 
     public List<WorkDone> getWorkByProfileId(long id) throws MalformedURLException, java.io.IOException {
 
-        URL url = new URL(context.getString(R.string.backend_url) + "/profiles/" + id + "/work-done");
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestProperty("Accept","application/json");
-        connection.setConnectTimeout(7000);
-        connection.setReadTimeout(7000);
-
-        connection.connect();
-
-        Scanner scanner = null;
-        String json = "";
-
-        try {
-            scanner = new Scanner(connection.getInputStream());
-
-            while (scanner.hasNextLine()) {
-                json += scanner.nextLine();
-            }
-        } finally {
-            if (scanner != null)
-                scanner.close();
-        }
+        String json = getJsonData(context.getString(R.string.backend_url) + "/profiles/" + id + "/work-done");
 
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(Date.class, new DateLongFormatTypeAdapter())

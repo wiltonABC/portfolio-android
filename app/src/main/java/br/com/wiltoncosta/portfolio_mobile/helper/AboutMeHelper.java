@@ -1,8 +1,9 @@
-package br.com.wiltoncosta.portfolio_mobile;
+package br.com.wiltoncosta.portfolio_mobile.helper;
 
 import android.view.View;
 import android.widget.TextView;
 
+import br.com.wiltoncosta.portfolio_mobile.R;
 import br.com.wiltoncosta.portfolio_mobile.model.Profile;
 
 public class AboutMeHelper {

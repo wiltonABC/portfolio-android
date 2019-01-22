@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import br.com.wiltoncosta.portfolio_mobile.helper.AboutMeHelper;
 import br.com.wiltoncosta.portfolio_mobile.model.Profile;
 
 

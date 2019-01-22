@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
 
@@ -16,7 +13,7 @@ import java.lang.ref.WeakReference;
 
 import br.com.wiltoncosta.portfolio_mobile.AboutMeFragment;
 import br.com.wiltoncosta.portfolio_mobile.PortfolioActivity;
-import br.com.wiltoncosta.portfolio_mobile.PortfolioHelper;
+import br.com.wiltoncosta.portfolio_mobile.helper.PortfolioHelper;
 import br.com.wiltoncosta.portfolio_mobile.R;
 import br.com.wiltoncosta.portfolio_mobile.model.Profile;
 import br.com.wiltoncosta.portfolio_mobile.web.ProfileWebClient;
@@ -61,7 +58,7 @@ public class ProfileTask extends AsyncTask<Void, Void, Profile> {
 
             final PortfolioActivity portfolioActivity = (PortfolioActivity) this.context.get();
 
-            //Could not get profile. Abort application
+            //Could not get profile. Abort activity
             if (profile == null) {
                 AlertDialog alert = new AlertDialog.Builder(this.context.get())
                         .setTitle("Application Error")
